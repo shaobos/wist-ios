@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "549180D51C4C5AD30080651D"
-               BuildableName = "wist.app"
+               BuildableName = "Wist.temp_caseinsensitive_rename.app"
                BlueprintName = "wist"
-               ReferencedContainer = "container:wist.xcodeproj">
+               ReferencedContainer = "container:Wist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "549180D51C4C5AD30080651D"
-            BuildableName = "wist.app"
+            BuildableName = "Wist.temp_caseinsensitive_rename.app"
             BlueprintName = "wist"
-            ReferencedContainer = "container:wist.xcodeproj">
+            ReferencedContainer = "container:Wist.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "549180D51C4C5AD30080651D"
-            BuildableName = "wist.app"
+            BuildableName = "Wist.temp_caseinsensitive_rename.app"
             BlueprintName = "wist"
-            ReferencedContainer = "container:wist.xcodeproj">
+            ReferencedContainer = "container:Wist.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "549180D51C4C5AD30080651D"
-            BuildableName = "wist.app"
+            BuildableName = "Wist.temp_caseinsensitive_rename.app"
             BlueprintName = "wist"
-            ReferencedContainer = "container:wist.xcodeproj">
+            ReferencedContainer = "container:Wist.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

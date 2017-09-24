@@ -12,16 +12,28 @@
 		549180DF1C4C5AD30080651D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549180DD1C4C5AD30080651D /* Main.storyboard */; };
 		549180E11C4C5AD30080651D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549180E01C4C5AD30080651D /* Assets.xcassets */; };
 		549180E41C4C5AD30080651D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549180E21C4C5AD30080651D /* LaunchScreen.storyboard */; };
+		54B89E9E1D176569008B4713 /* wordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B89E9D1D176569008B4713 /* wordView.xib */; };
+		54B89EA01D1774C6008B4713 /* LearnedWordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B89E9F1D1774C6008B4713 /* LearnedWordController.swift */; };
+		54F5F7101EF75DF700A1CBA1 /* ForceTouchWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5F70F1EF75DF700A1CBA1 /* ForceTouchWordViewController.swift */; };
+		54FB52701C72B98700854636 /* WordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB526F1C72B98700854636 /* WordStore.swift */; };
+		54FB52721C72DD1300854636 /* WordTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB52711C72DD1300854636 /* WordTableCell.swift */; };
+		54FB52741C72E60400854636 /* WordTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB52731C72E60400854636 /* WordTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		549180D61C4C5AD30080651D /* wist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		549180D61C4C5AD30080651D /* Wist.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wist.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549180D91C4C5AD30080651D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		549180DB1C4C5AD30080651D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		549180DE1C4C5AD30080651D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		549180E01C4C5AD30080651D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		549180E31C4C5AD30080651D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		549180E51C4C5AD30080651D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54B89E9D1D176569008B4713 /* wordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wordView.xib; sourceTree = "<group>"; };
+		54B89E9F1D1774C6008B4713 /* LearnedWordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnedWordController.swift; path = ../LearnedWordController.swift; sourceTree = "<group>"; };
+		54F5F70F1EF75DF700A1CBA1 /* ForceTouchWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchWordViewController.swift; sourceTree = "<group>"; };
+		54FB526F1C72B98700854636 /* WordStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordStore.swift; path = ../WordStore.swift; sourceTree = "<group>"; };
+		54FB52711C72DD1300854636 /* WordTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTableCell.swift; sourceTree = "<group>"; };
+		54FB52731C72E60400854636 /* WordTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +58,7 @@
 		549180D71C4C5AD30080651D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				549180D61C4C5AD30080651D /* wist.app */,
+				549180D61C4C5AD30080651D /* Wist.temp_caseinsensitive_rename.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,12 +66,18 @@
 		549180D81C4C5AD30080651D /* wist */ = {
 			isa = PBXGroup;
 			children = (
+				54B89E9F1D1774C6008B4713 /* LearnedWordController.swift */,
+				54FB526F1C72B98700854636 /* WordStore.swift */,
+				54FB52731C72E60400854636 /* WordTable.swift */,
+				54FB52711C72DD1300854636 /* WordTableCell.swift */,
 				549180D91C4C5AD30080651D /* AppDelegate.swift */,
 				549180DB1C4C5AD30080651D /* ViewController.swift */,
+				54B89E9D1D176569008B4713 /* wordView.xib */,
 				549180DD1C4C5AD30080651D /* Main.storyboard */,
 				549180E01C4C5AD30080651D /* Assets.xcassets */,
 				549180E21C4C5AD30080651D /* LaunchScreen.storyboard */,
 				549180E51C4C5AD30080651D /* Info.plist */,
+				54F5F70F1EF75DF700A1CBA1 /* ForceTouchWordViewController.swift */,
 			);
 			path = wist;
 			sourceTree = "<group>";
@@ -81,7 +99,7 @@
 			);
 			name = wist;
 			productName = wist;
-			productReference = 549180D61C4C5AD30080651D /* wist.app */;
+			productReference = 549180D61C4C5AD30080651D /* Wist.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -96,10 +114,12 @@
 				TargetAttributes = {
 					549180D51C4C5AD30080651D = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = JGMSX62R9P;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
-			buildConfigurationList = 549180D11C4C5AD30080651D /* Build configuration list for PBXProject "wist" */;
+			buildConfigurationList = 549180D11C4C5AD30080651D /* Build configuration list for PBXProject "Wist" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -122,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B89E9E1D176569008B4713 /* wordView.xib in Resources */,
 				549180E41C4C5AD30080651D /* LaunchScreen.storyboard in Resources */,
 				549180E11C4C5AD30080651D /* Assets.xcassets in Resources */,
 				549180DF1C4C5AD30080651D /* Main.storyboard in Resources */,
@@ -136,7 +157,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				549180DC1C4C5AD30080651D /* ViewController.swift in Sources */,
+				54FB52741C72E60400854636 /* WordTable.swift in Sources */,
+				54FB52721C72DD1300854636 /* WordTableCell.swift in Sources */,
+				54B89EA01D1774C6008B4713 /* LearnedWordController.swift in Sources */,
 				549180DA1C4C5AD30080651D /* AppDelegate.swift in Sources */,
+				54FB52701C72B98700854636 /* WordStore.swift in Sources */,
+				54F5F7101EF75DF700A1CBA1 /* ForceTouchWordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +275,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JGMSX62R9P;
 				INFOPLIST_FILE = wist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssb.wist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wist.temp_caseinsensitive_rename;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -260,17 +288,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JGMSX62R9P;
 				INFOPLIST_FILE = wist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssb.wist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wist.temp_caseinsensitive_rename;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		549180D11C4C5AD30080651D /* Build configuration list for PBXProject "wist" */ = {
+		549180D11C4C5AD30080651D /* Build configuration list for PBXProject "Wist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				549180E61C4C5AD30080651D /* Debug */,
@@ -286,6 +316,7 @@
 				549180EA1C4C5AD30080651D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
