@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var word: UITextField!
+    @IBOutlet weak var noteView: UITextView!
+    @IBOutlet var indexLabel:UILabel!
+    
     @IBAction func learnedButton(_ sender: AnyObject) {
         let word = currentWord
         updateWordInServer(word)
-        typing_off()
-        typingResult.text = "Correct!"
-        
     }
+    
     var currentIndex = -1
     var currentWord = ""
     var words =  [[String: String]]()
@@ -24,10 +26,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var todayReviewedWords = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        typeWordTextField.delegate = self //set delegate to textfile
-
+        
         // Do any additional setup after loading the view, typically from a nib.
+        // TODO: use getAll here
         let request = NSMutableURLRequest(url: URL(string: baseUrl + "wordsOfToday/1")!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
@@ -67,59 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBOutlet weak var word: UITextField!
 
-    @IBOutlet weak var typeWordTextField: UITextField!
-    @IBOutlet weak var noteView: UITextView!
-    @IBOutlet weak var typingResult: UILabel!
-    @IBOutlet weak var memorizeButton: UIButton!
-    
-    @IBAction func memorizeButtonPressed(_ sender: AnyObject) {
-        typing_on()
-    }
-    
-    func typing_on() {
-        word.isHidden = true
-        typeWordTextField.isHidden = false
-        typeWordTextField.becomeFirstResponder()
-    }
-    
-    func typing_off() {
-        word.isHidden = false
-        typeWordTextField.isHidden = true
-        typeWordTextField.text = ""
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == typeWordTextField {
-            let userTyping:String = typeWordTextField.text!
-            let word = currentWord
-            print("word is \(word)")
-            if (userTyping ==  word) {
-                print("User typing \(userTyping) matched the word \(word)")
-                todayReviewedWords.append(word)
-                updateWordInServer(word)
-                typing_off()
-                typingResult.text = "Correct!"
-                textField.resignFirstResponder()
-                return false
-            } else {
-                print("User typing \(userTyping) did not match the word \(word)")
-                typingResult.text = "Wrong!"
-            }
-        } else {
-            print("not the target text field")
-        }
-        
-        return true
-    }
-    
-
-    @IBAction func nextWord(_ sender: AnyObject) {
-        nextWordAction()
-
-        
-    }
     
     func nextWordAction() {
         if (words.count == 0) {
@@ -133,20 +82,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         indexLabel.text = "\(currentIndex+1)/\(words.count)"
         
-        typingResult.text = ""
-        print(currentIndex)
         for (key, value) in words[currentIndex] {
             currentWord = key
             word.text = key
             noteView.text = value
-            if (todayReviewedWords.contains(key)) {
-                memorizeButton.isUserInteractionEnabled = false
-                memorizeButton.titleLabel?.text = "Reviewed"
-            } else {
-                memorizeButton.isUserInteractionEnabled = true
-                memorizeButton.titleLabel?.text = "Memorize!"
-            }
+            print("Note view")
+            print(value)
         }
+        
     }
     
     func updateWordInServer(_ word:String) {
@@ -162,17 +105,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }) 
         task.resume()
     } 
-    @IBAction func dismissKeyboard(_ sender: AnyObject) {
-        typeWordTextField.resignFirstResponder()
-        typing_off()
+
+    
+    @IBAction func tapToNextWork(_ sender: AnyObject) {
+        print("Tap happened!")
+        updateWordInServer(currentWord)
+        nextWordAction()
+
     }
     
     @IBAction func swipeToNextWord(_ sender: AnyObject) {
-        print("swiped!!!!")
-        nextWord(sender)
+        print("swiped to right!!!!")
+        print("current word")
+        print(currentWord)
+        nextWordAction()
     }
     
-    @IBOutlet var indexLabel:UILabel!
     
     @IBAction func swipeToPreviousWord(_ sender: AnyObject) {
         if (words.count == 0) {
@@ -190,13 +138,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             currentWord = key
             word.text = key
             noteView.text = value
-            if (todayReviewedWords.contains(key)) {
-                memorizeButton.isUserInteractionEnabled = false
-                memorizeButton.titleLabel?.text = "Reviewed"
-            } else {
-                memorizeButton.isUserInteractionEnabled = true
-                memorizeButton.titleLabel?.text = "Memorize!"
-            }
         }
     }
 }
