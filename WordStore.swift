@@ -10,29 +10,20 @@ import Foundation
 
 class WordStore {
     
-    let baseUrl = "http://40.71.42.29:8080/wist-server/"
-    
-    // uncomment to test local API server
-    //let baseUrl = "http://localhost:8080/wist-server/"
-
-    
-    func fetchWords(_ completion: @escaping ([String:String]) -> Void) {
+    func fetchAllWords(_ completion: @escaping ([[String:Any]]) -> Void) {
         
         // Do any additional setup after loading the view, typically from a nib.
-        let request = NSMutableURLRequest(url: URL(string: baseUrl + "allWords")!)
+        let request = NSMutableURLRequest(url: URL(string: APIServerBaseUrl + "words")!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
-            
             data, response, error in
-            
             if data != nil {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any]
                     
-                    if let allWords = json?["allWords"] as? [String: String] {
+                    if let allWords = json?["elements"] as? [[String:Any]] {
                         completion(allWords)
                     }
-                    
                 } catch {
                     print("Error serializing JSON: \(error)")
                 }
@@ -46,7 +37,7 @@ class WordStore {
      
         print("word query is: " + wordQuery)
         // Do any additional setup after loading the view, typically from a nib.
-        let request = NSMutableURLRequest(url: URL(string: baseUrl + "word/" + wordQuery)!)
+        let request = NSMutableURLRequest(url: URL(string: APIServerBaseUrl + "words/" + wordQuery)!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
             
@@ -71,4 +62,18 @@ class WordStore {
         task.resume()
     }
     
+    
+    func updateWordInServer(_ word:String) {
+        print("Word '\(word)' has been reviewed. Sending update to server")
+        let request = NSMutableURLRequest(url: URL(string: APIServerBaseUrl + "word/\(word)")!)
+        request.httpMethod = "PUT"
+        let parameters = [String:String]()
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
+            retData, response, error in
+            print(response)
+        })
+        task.resume()
+    }
 }

@@ -24,14 +24,24 @@ class WordTable : UIViewController, UITableViewDataSource, UITableViewDelegate, 
             registerForPreviewing(with: self, sourceView: view)
         }
         
-        wordStore.fetchWords {
+        wordStore.fetchAllWords {
             result in
-            self.words = result
+            
+            var displayAllWords = [String:String]()
+
+            for word in result {
+                if let wordName:String = word["wordName"] as? String {
+                    if let wordCount:NSNumber = word["reviewCount"] as? NSNumber {
+                        displayAllWords[wordName] = wordCount.stringValue
+                    }
+                }
+            }
+            
+            self.words = displayAllWords;
             
             DispatchQueue.main.async(execute: {
                 self.tableView.reloadData()
-
-                })
+            })
             print("Finish reloading")
         }
     }

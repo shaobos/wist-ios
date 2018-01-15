@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		546C0113200C3C6C00483AC3 /* APIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C0112200C3C6C00483AC3 /* APIServer.swift */; };
 		549180DA1C4C5AD30080651D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549180D91C4C5AD30080651D /* AppDelegate.swift */; };
 		549180DC1C4C5AD30080651D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549180DB1C4C5AD30080651D /* ViewController.swift */; };
 		549180DF1C4C5AD30080651D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549180DD1C4C5AD30080651D /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		546C0112200C3C6C00483AC3 /* APIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServer.swift; sourceTree = "<group>"; };
 		549180D61C4C5AD30080651D /* Wist.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wist.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549180D91C4C5AD30080651D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		549180DB1C4C5AD30080651D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				549180E21C4C5AD30080651D /* LaunchScreen.storyboard */,
 				549180E51C4C5AD30080651D /* Info.plist */,
 				54F5F70F1EF75DF700A1CBA1 /* ForceTouchWordViewController.swift */,
+				546C0112200C3C6C00483AC3 /* APIServer.swift */,
 			);
 			path = wist;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				549180DC1C4C5AD30080651D /* ViewController.swift in Sources */,
 				54FB52741C72E60400854636 /* WordTable.swift in Sources */,
 				54FB52721C72DD1300854636 /* WordTableCell.swift in Sources */,
+				546C0113200C3C6C00483AC3 /* APIServer.swift in Sources */,
 				54B89EA01D1774C6008B4713 /* LearnedWordController.swift in Sources */,
 				549180DA1C4C5AD30080651D /* AppDelegate.swift in Sources */,
 				54FB52701C72B98700854636 /* WordStore.swift in Sources */,
